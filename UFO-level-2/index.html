@@ -13,7 +13,7 @@
 
 <body>
   <div class="wrapper">
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">UFO Sightings
                 <img class="nav-ufo my-2" src="static/images/ufo.svg">
@@ -28,23 +28,198 @@
       <div class="row margin-top-50">
         <div class="col-md-3">
           <aside class="filters">
-            <div class="panel panel-default">
-              <div class="panel-heading">Filter Search</div>
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011"/>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
-                  </div>                  
-                </form>
-              </div>
+            <div class="card">
+                <div class="card-header card-header-bg">
+                    <h5 class="card-title card-hd-title-color">Filter Search</h5>
+                </div>
+                <div class="card-body card-body-bg">
+                    <div class="mb-3">
+                        <label for="datetime" class="form-label"><h5 class="card-title card-title-color">Enter a date</h5></label>
+                        <input type="text" class="form-control" id="datetime" placeholder="1/11/2010">
+                    </div>
+                    <div class="mb-3">
+                      <label for="city-select" class="form-label"><h5 class="card-title card-title-color">Select a city</h5></label>
+                      <select id="city-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value=""> </option>
+                        <option value="benton">benton</option>
+                        <option value="bonita">bonita</option>
+                        <option value="el cajon">el cajon</option>
+                        <option value="fresno">fresno</option>
+                        <option value="grants pass">grants pass</option>
+                        <option value="la mesa">la mesa</option>
+                        <option value="lemon grove">lemon grove</option>
+                        <option value="maricopa">maricopa</option>
+                        <option value="park city">park city</option>
+                        <option value="st. louis">st. louis</option>
+                        <option value="spring valley">spring valley</option>
+                        <option value="willow">willow</option>
+                        <option value="antioch">antioch</option>
+                        <option value="naples">naples</option>
+                        <option value="anchorage">anchorage</option>
+                        <option value="national city">national city</option>
+                        <option value="boca raton">boca raton</option>
+                        <option value="falcon">falcon</option>
+                        <option value="crestview">crestview</option>
+                        <option value="aspen">aspen</option>
+                        <option value="walworth">walworth</option>
+                        <option value="baker">baker</option>
+                        <option value="san diego">san diego</option>
+                        <option value="haverhill">haverhill</option>
+                        <option value="pasadena">pasadena</option>
+                        <option value="albuquerque">albuquerque</option>
+                        <option value="jasper">jasper</option>
+                        <option value="bakersfield">bakersfield</option>
+                        <option value="orange">orange</option>
+                        <option value="phoenix">phoenix</option>
+                        <option value="sacramento">sacramento</option>
+                        <option value="middleburg">middleburg</option>
+                        <option value="waxhaw">waxhaw</option>
+                        <option value="madison">madison</option>
+                        <option value="loveland">loveland</option>
+                        <option value="atlanta">atlanta</option>
+                        <option value="mason">mason</option>
+                        <option value="glen spey">glen spey</option>
+                        <option value="reedville">reedville</option>
+                        <option value="cleveland">cleveland</option>
+                        <option value="whittier">whittier</option>
+                        <option value="ben wheeler">ben wheeler</option>
+                        <option value="san pablo">san pablo</option>
+                        <option value="cedar rapids">cedar rapids</option>
+                        <option value="princeton">princeton</option>
+                        <option value="chula vista">chula vista</option>
+                        <option value="colonia">colonia</option>
+                        <option value="clinton">clinton</option>
+                        <option value="new paltz">new paltz</option>
+                        <option value="rockwell">rockwell</option>
+                        <option value="anderson">anderson</option>
+                        <option value="pacific palisades">pacific palisades</option>
+                        <option value="searcy">searcy</option>
+                        <option value="southampton">southampton</option>
+                        <option value="mansfield">mansfield</option>
+                        <option value="edgartown">edgartown</option>
+                        <option value="windham">windham</option>
+                        <option value="west boylston">west boylston</option>
+                        <option value="westbrook">westbrook</option>
+                        <option value="fort worth">fort worth</option>
+                        <option value="tomball">tomball</option>
+                        <option value="port saint lucie">port saint lucie</option>
+                        <option value="boulder">boulder</option>
+                        <option value="london (canada)">london (canada)</option>
+                        <option value="francis creek">francis creek</option>
+                        <option value="woodbridge">woodbridge</option>
+                        <option value="seattle">seattle</option>
+                        <option value="freedom (watsonville)">freedom (watsonville)</option>
+                        <option value="santa fe springs">santa fe springs</option>
+                        <option value="saline">saline</option>
+                        <option value="buffalo">buffalo</option>
+                        <option value="cincinnati">cincinnati</option>
+                        <option value="paducah">paducah</option>
+                        <option value="uxbridge">uxbridge</option>
+                        <option value="round rock">round rock</option>
+                        <option value="san jacinto">san jacinto</option>
+                        <option value="norton">norton</option>
+                        <option value="hancock">hancock</option>
+                        <option value="cary">cary</option>
+                        <option value="tularosa">tularosa</option>
+                        <option value="eunice">eunice</option>
+                        <option value="butler">butler</option>
+                        <option value="lompoc">lompoc</option>
+                        <option value="pratt">pratt</option>
+                        <option value="taunton">taunton</option>
+                        <option value="lakeland">lakeland</option>
+                        <option value="fort myers">fort myers</option>
+                        <option value="fairfield">fairfield</option>
+                        <option value="joplin">joplin</option>
+                        <option value="leatherwood">leatherwood</option>
+                        <option value="ingleside (canada)">ingleside (canada)</option>
+                        <option value="fayetteville">fayetteville</option>
+                        <option value="eugene">eugene</option>
+                        <option value="springfield">springfield</option>
+                        <option value="alma">alma</option>
+                        <option value="wichita">wichita</option>
+                        <option value="deep run">deep run</option>
+                        <option value="waukesha">waukesha</option>
+                        <option value="ceres">ceres</option>
+                        <option value="white oak">white oak</option>
+                        <option value="ackerman">ackerman</option>
+                        <option value="gulf breeze">gulf breeze</option>
+                      </select>
+                    </div> 
+                    <div class="mb-3">
+                      <label for="state-select" class="form-label"><h5 class="card-title card-title-color">Select a State</h5></label>
+                      <select id="state-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value=""></option>
+                        <option value="ar">Arkansas</option>
+                        <option value="ca">California</option>
+                        <option value="or">Oregon</option>
+                        <option value="az">Arizona</option>
+                        <option value="ky">Kentucky</option>
+                        <option value="mo">Missouri</option>
+                        <option value="ak">Alaska</option>
+                        <option value="fl">Florida</option>
+                        <option value="co">Colorado</option>
+                        <option value="wi">Wisconsin</option>
+                        <option value="ma">Massachusetts</option>
+                        <option value="nm">New Mexico</option>
+                        <option value="nc">North Carolina</option>
+                        <option value="al">Alabama</option>
+                        <option value="ga">Georgia</option>
+                        <option value="oh">Ohio</option>
+                        <option value="ny">New York</option>
+                        <option value="va">Virginia</option>
+                        <option value="tx">Texas</option>
+                        <option value="ia">Idaho</option>
+                        <option value="in">Indiana</option>
+                        <option value="nj">New Jersey</option>
+                        <option value="sc">South Carolina</option>
+                        <option value="nh">New Hampshire</option>
+                        <option value="ct">Connecticut</option>
+                        <option value="on">Ontario</option>
+                        <option value="tn">Tennessee</option>
+                        <option value="wa">Washington</option>
+                        <option value="mi">Michigan</option>
+                        <option value="md">Maryland</option>
+                        <option value="la">Louisiana</option>
+                        <option value="ks">Kansas</option>
+                        <option value="wv">West Virginia</option>
+                        <option value="pa">Pennsylvania</option>
+                        <option value="ms">Mississippi</option>  
+                      </select>
+                    </div>   
+                    <div class="mb-3">
+                      <label for="country-select" class="form-label"><h5 class="card-title card-title-color">Select a country</h5></label>
+                      <select id="country-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value=""></option>
+                        <option value="us">United States of America</option>
+                        <option value="ca">Canada</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="Shape" class="form-label"><h5 class="card-title card-title-color">Select a Shape</h5></label>
+                      <select id="shape-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value=""></option>
+                        <option value="circle">circle</option>
+                        <option value="light">light</option>
+                        <option value="triangle">triangle</option>
+                        <option value="unknown">unknown</option>
+                        <option value="fireball">fireball</option>
+                        <option value="formation">formation</option>
+                        <option value="other">other</option>
+                        <option value="sphere">sphere</option>
+                        <option value="disk">disk</option>
+                        <option value="chevron">chevron</option>
+                        <option value="rectangle">rectangle</option>
+                        <option value="cross">cross</option>
+                        <option value="flash">flash</option>
+                        <option value="changing">changing</option>
+                        <option value="oval">oval</option>
+                        <option value="cigar">cigar</option>
+                        <option value="teardrop">teardrop</option>
+                        <option value="cylinder">cylinder</option>
+                      </select>
+                    </div>   
+                    <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
+                </div>
             </div>
           </aside>
         </div>
@@ -52,14 +227,14 @@
           <div id="table-area" class="">
             <table id="ufo-table" class="table table-striped">
               <thead>
-                <tr>
-                  <th class="table-head">Date</th>
-                  <th class="table-head">City</th>
-                  <th class="table-head">State</th>
-                  <th class="table-head">Country</th>
-                  <th class="table-head">Shape</th>
-                  <th class="table-head">Duration</th>
-                  <th class="table-head">Comments</th>
+                <tr class="">
+                  <th class="table-head table-area-color">Date</th>
+                  <th class="table-head table-area-color">City</th>
+                  <th class="table-head table-area-color">State</th>
+                  <th class="table-head table-area-color">Country</th>
+                  <th class="table-head table-area-color">Shape</th>
+                  <th class="table-head table-area-color">Duration</th>
+                  <th class="table-head table-area-color">Comments</th>
                 </tr>
               </thead>
               <tbody></tbody>

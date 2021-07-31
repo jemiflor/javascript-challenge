@@ -24,19 +24,38 @@ function drawtable(data){
 
 drawtable(tableData)
 
-// Select the filter-btn buttons and date input box
+// Select the filter-btn buttons and filter form elements
 var filterByDateButton = d3.select("#filter-btn");
 var dateInput = d3.select("#datetime");
+var cityInput = d3.select("#city-select");
+var stateInput = d3.select("#state-select");
+var countryInput = d3.select("#country-select");
+var shapeInput = d3.select("#shape-select");
 
 
 filterByDateButton.on("click", function() {
     
-    // get the date entered to filter
+    // get the entered/selected filter data
     var dateToFilter = dateInput.property('value');
+    var cityToFilter = cityInput.property('value');
+    var stateToFilter = stateInput.property('value');
+    var countryToFilter = countryInput.property('value');
+    var shapeToFilter = shapeInput.property('value');
     
-    //filter ufo sightings by the date filter value
-    var ufoSightingsFilteredByDate = tableData.filter(ufoSighting => ufoSighting.datetime === dateToFilter);
-  
+    //initialize result with unfiltered data
+    var multiFilterResult = tableData;
+
+    //filter ufo sightings by the date filter value if available
+    multiFilterResult = multiFilterResult
+      .filter(ufoSighting => 
+          (ufoSighting.datetime === (dateToFilter ||  ufoSighting.datetime)) &&
+          (ufoSighting.city === (cityToFilter || ufoSighting.city)) &&
+          (ufoSighting.state === (stateToFilter || ufoSighting.state)) &&
+          (ufoSighting.country === (countryToFilter || ufoSighting.country)) &&
+          (ufoSighting.shape === (shapeToFilter || ufoSighting.shape))
+        );
+    //Research Reference: https://stackoverflow.com/questions/476436/is-there-a-null-coalescing-operator-in-javascript?answertab=active#tab-top    
+
     // Remove all rows from the table
     var rows = d3.select('tbody').selectAll("tr")    
                  .data([])                
@@ -44,6 +63,6 @@ filterByDateButton.on("click", function() {
                  .remove();
 
     // Draw the table with filtered data
-    drawtable(ufoSightingsFilteredByDate)
+    drawtable(multiFilterResult)
 
   });
