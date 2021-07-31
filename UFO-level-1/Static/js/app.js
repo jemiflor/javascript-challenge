@@ -35,7 +35,8 @@ filterByDateButton.on("click", function() {
     var dateToFilter = dateInput.property('value');
     
     //filter ufo sightings by the date filter value
-    var ufoSightingsFilteredByDate = tableData.filter(ufoSighting => ufoSighting.datetime === dateToFilter);
+    var ufoSightingsFilteredByDate = tableData.filter(
+      ufoSighting => ufoSighting.datetime === (dateToFilter || ufoSighting.datetime));
   
     // Remove all rows from the table
     var rows = d3.select('tbody').selectAll("tr")    
